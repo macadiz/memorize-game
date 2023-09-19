@@ -1,0 +1,10 @@
+.difficulty-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.difficulty-buttons-container button {
+  width: 300px;
+}

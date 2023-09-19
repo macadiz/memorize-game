@@ -1,0 +1,11 @@
+.memorize-game-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.back-button {
+  margin-bottom: 16px;
+}
