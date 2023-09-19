@@ -37,6 +37,13 @@ export const GameContextProvider: FC<PropsWithChildren> = ({ children }) => {
     }
   }, [selectedCards]);
 
+  useEffect(() => {
+    if (status === "Menu") {
+      setPairedCards([]);
+      setSelectedCards([]);
+    }
+  }, [status]);
+
   return (
     <GameContext.Provider
       value={{
