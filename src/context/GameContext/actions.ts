@@ -1,15 +1,12 @@
-import {
-  availableEmojis,
-  diffcultyMap,
-} from "../../context/GameContext/constants";
-import { GameCard, GameDifficulty } from "../../context/GameContext/interfaces";
+import { availableEmojis, diffcultyMap } from "./constants";
+import { GameCard, GameDifficulty } from "./interfaces";
 import { shuffle } from "../../utils/array";
 import { v4 as uuid } from "uuid";
 
 export const generatePlayableCards = (
-  diffuclty: GameDifficulty
+  difficulty: GameDifficulty
 ): GameCard[] => {
-  const emojiNumber = diffcultyMap[diffuclty];
+  const emojiNumber = diffcultyMap[difficulty];
 
   const shuffledArray = shuffle(availableEmojis);
 

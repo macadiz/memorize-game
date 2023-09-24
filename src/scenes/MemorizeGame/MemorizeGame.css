@@ -3,6 +3,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
+}
+
+.memorize-game-cards-grid > .flip-card {
   cursor: pointer;
 }
 

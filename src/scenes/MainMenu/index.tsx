@@ -1,28 +1,21 @@
 import { useGame } from "../../context/GameContext";
-import { GameDifficulty } from "../../context/GameContext/interfaces";
-import { generatePlayableCards } from "./actions";
 
 import "./MainMenu.css";
 
 const GameStart = () => {
-  const { setCards, setStatus } = useGame();
-
-  const generateCards = (difficulty: GameDifficulty) => {
-    setCards(generatePlayableCards(difficulty));
-    setStatus("Playing");
-  };
+  const { startGame } = useGame();
 
   return (
     <>
       <h3>Choose difficulty:</h3>
       <div className="difficulty-buttons-container">
-        <button className="primary" onClick={() => generateCards("Easy")}>
+        <button className="primary" onClick={() => startGame("Easy")}>
           Easy
         </button>
-        <button className="primary" onClick={() => generateCards("Medium")}>
+        <button className="primary" onClick={() => startGame("Medium")}>
           Medium
         </button>
-        <button className="primary" onClick={() => generateCards("Hard")}>
+        <button className="primary" onClick={() => startGame("Hard")}>
           Hard
         </button>
       </div>

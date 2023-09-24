@@ -8,7 +8,7 @@ import { useGame } from "../../context/GameContext";
 const GameCard: FC<GameCardProps> = ({ emojiCard, isSelected }) => {
   const { setSelectedCard } = useGame();
 
-  const cardClasses = classNames("flip-card", {
+  const cardClasses = classNames("flip-card", "no-highlight", {
     selected: isSelected,
   });
 

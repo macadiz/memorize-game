@@ -1,10 +1,16 @@
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { useGame } from "../../context/GameContext";
 import GameCard from "../../components/GameCard";
 import "./MemorizeGame.css";
+import WinnerModal from "../../components/WinnerModal";
 
 const MemorizeGame: FC = () => {
   const { cards, selectedCards, pairedCards, setStatus } = useGame();
+
+  const hasFinished = useMemo(
+    () => pairedCards.length === cards.length / 2 && cards.length !== 0,
+    [pairedCards, cards]
+  );
 
   const onBackClick = () => {
     setStatus("Menu");
@@ -28,6 +34,7 @@ const MemorizeGame: FC = () => {
           );
         })}
       </div>
+      <WinnerModal isOpen={hasFinished} />
     </>
   );
 };
