@@ -9,14 +9,15 @@ import "./WinnerModal.css";
 const WinnerModal: FC<WinnerModalProps> = ({ isOpen }) => {
   const { tries, difficulty, startGame, setStatus } = useGame();
 
-  const modalBackgropClasses = classNames("modal-backdrop", {
+  const modalContainerClasses = classNames("modal-container", {
     open: isOpen,
   });
 
   return createPortal(
-    <div className={modalBackgropClasses}>
+    <div className={modalContainerClasses}>
+      <div className="modal-backdrop"></div>
       <div className="modal-dialog">
-        <h3>🎉 Congratulations 🎉</h3>
+        <h3 className="congratulations-title">🎉 Congratulations 🎉</h3>
         <p>You won in {tries} tries</p>
         <button className="primary" onClick={() => setStatus("Menu")}>
           Go back to the menu
